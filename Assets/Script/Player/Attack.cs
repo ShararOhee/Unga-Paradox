@@ -71,6 +71,7 @@ public class Attack : MonoBehaviour
 
         // Instantiate attack effect
         GameObject attack = Instantiate(attackEffect, spawnPos, Quaternion.Euler(0, 0, angle));
+        attack.transform.SetParent(transform);
 
         //// Attack effect initialization
         //AttackEffect effect = attack.GetComponent<AttackEffect>();
