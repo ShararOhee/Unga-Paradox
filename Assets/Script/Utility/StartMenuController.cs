@@ -5,7 +5,7 @@ public class StartMenuController : MonoBehaviour
 {
     public void OnStartClick()
     {
-        SceneManager.LoadScene("Main Hub");
+        SceneManager.LoadScene("Cutscene");
     }
 
     public void OnExitClick()
