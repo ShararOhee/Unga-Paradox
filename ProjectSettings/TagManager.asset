@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -45,8 +47,14 @@ TagManager:
   - name: Ground
     uniqueID: 2216104849
     locked: 0
-  - name: Foreground
+  - name: WalkInFront
     uniqueID: 1735150595
+    locked: 0
+  - name: Collideable
+    uniqueID: 4113602851
+    locked: 0
+  - name: Character
+    uniqueID: 299022299
     locked: 0
   m_RenderingLayers:
   - Default
