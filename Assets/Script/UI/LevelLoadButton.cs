@@ -22,4 +22,12 @@ public class LevelLoadButton : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoadName);
     }
+
+    public void OnExitClick()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
 }

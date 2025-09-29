@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 442856185627641414}
   - component: {fileID: 1143681724982815719}
   - component: {fileID: 398557625186027852}
-  - component: {fileID: 1258427546405695285}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -134,18 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1258427546405695285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194423125483016175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb14f17f00fbd6148ba5bb37b3fc09d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelLoadButton
 --- !u!1 &393747925744152985
 GameObject:
   m_ObjectHideFlags: 0

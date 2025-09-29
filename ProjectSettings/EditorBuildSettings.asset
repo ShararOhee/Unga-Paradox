@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/_Scenes/Menu.unity
+  - enabled: 0
+    path: Assets/_Scenes/Old Menu.unity
     guid: 8a21f660da2bc44bcb7a903c31f11d70
   - enabled: 1
     path: Assets/_Scenes/Cutscene.unity
@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Monkey Lord.unity
     guid: b37886e2fbabb4c4a8aeb54faaff2010
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: 577b70227744a4b42a161395320879c0
+  - enabled: 1
+    path: Assets/_Scenes/Neon City.unity
+    guid: a9139183fd3191941b27bb2b6e143d0f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
