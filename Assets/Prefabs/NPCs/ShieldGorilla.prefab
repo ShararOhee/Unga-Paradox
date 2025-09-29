@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 7557334702737264498}
   - component: {fileID: 1981594673224023545}
   - component: {fileID: 5264983850442798278}
-  - component: {fileID: 666633540603953187}
   - component: {fileID: 593540733578329515}
   - component: {fileID: 7414771210813001043}
   m_Layer: 0
-  m_Name: ShieldGorilla (1)
+  m_Name: ShieldGorilla
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,23 +99,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &666633540603953187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793705713531557420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885415b25d9dbeb40995bab4b2ef7a3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::General_Enemy_Wandering
-  moveSpeed: 2
-  wanderRadius: 3
-  minRestTime: 0.5
-  maxRestTime: 2
-  target: {x: 0, y: 0}
 --- !u!212 &593540733578329515
 SpriteRenderer:
   m_ObjectHideFlags: 0

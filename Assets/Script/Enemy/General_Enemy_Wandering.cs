@@ -26,9 +26,9 @@ public class General_Enemy_Wandering : MonoBehaviour
     public Vector2 target;
     private void Awake()
     {
-        homeLocation = transform.position;
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        homeLocation = transform.parent != null ? (Vector2)transform.parent.position : (Vector2)transform.position;
+        rb = GetComponentInParent<Rigidbody2D>(); // from parent gameObject
+        anim = GetComponentInParent<Animator>(); // from parent gameObject
     }
 
     private void OnEnable()
@@ -56,17 +56,17 @@ public class General_Enemy_Wandering : MonoBehaviour
         HandleMovements();
     }
 
-    private void HandleMovements()
+    private void HandleMovements() // update for parent gameObject
     {
-        Vector2 direction = (target - (Vector2)transform.position).normalized;
+        Vector2 direction = (target - (Vector2)transform.parent.position).normalized;
 
-        if (direction.x > 0 && transform.localScale.x > 0)
+        if (direction.x > 0 && transform.parent.localScale.x > 0)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x * -1), transform.localScale.y, transform.localScale.z);
+            transform.parent.localScale = new Vector3(-Mathf.Abs(transform.parent.localScale.x * -1), transform.parent.localScale.y, transform.parent.localScale.z);
         }
-        else if (direction.x < 0  && transform.localScale.x < 0)
+        else if (direction.x < 0  && transform.parent.localScale.x < 0)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            transform.parent.localScale = new Vector3(Mathf.Abs(transform.parent.localScale.x), transform.parent.localScale.y, transform.parent.localScale.z);
         }
 
         rb.linearVelocity = direction * moveSpeed;
@@ -84,14 +84,14 @@ public class General_Enemy_Wandering : MonoBehaviour
         anim.Play("Walk");
     }
 
-    public void OnCollisionEnter2D(Collision2D collision) // needs to update collision detection
+    public void OnParentCollision(Collision2D collision) // needs to update collision detection
     {
-        if (collision.gameObject.CompareTag("Player")) 
-            Debug.Log(gameObject.name+ " Collided With Player!");
+        if (collision.gameObject.CompareTag("Player"))
+           Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " Collided With Player!");
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle"))
         {
-            StopAllCoroutines(); // stop the current coroutine to avoid multiple coroutines running at the same time
-            isResting = false; // ensure the enemy is not resting
+            Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " Collided With Wall!");
+            StopAllCoroutines();// stop the current coroutine to avoid multiple coroutines running at the same time
             StartCoroutine(IdleAndSetNewWanderPoint());
         }
     }
@@ -106,7 +106,7 @@ public class General_Enemy_Wandering : MonoBehaviour
   
     private void OnDrawGizmosSelected()
     {
-        Debug.Log(gameObject.name + " spawnLocation: " + homeLocation);
+        //Debug.Log(gameObject.name + " spawnLocation: " + homeLocation);
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(homeLocation, wanderRadius); // homeLocation will look weird before running the editor.
     }
