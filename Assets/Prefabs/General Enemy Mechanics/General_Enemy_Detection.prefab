@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4524316175038560821}
   - component: {fileID: 6112924333742489278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: General_Enemy_Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::General_Enemy_Detection
   Detection_Range: 3
+  Layers_To_Detect:
+    serializedVersion: 2
+    m_Bits: 136
+  hasLineOfSight: 0
