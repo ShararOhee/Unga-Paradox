@@ -24,6 +24,9 @@ public class General_Enemy_Wandering : MonoBehaviour
     private Vector2 homeLocation;
     private bool isResting;
     public Vector2 target;
+    
+    // for debugging purposes
+    private Vector2 lastSelectedWanderPoint;
     private void Awake()
     {
         homeLocation = transform.parent != null ? (Vector2)transform.parent.position : (Vector2)transform.position;
@@ -80,27 +83,53 @@ public class General_Enemy_Wandering : MonoBehaviour
         yield return new WaitForSeconds(restTime);
 
         target = GetRandomWanderPoint();
+        Debug.Log(HelperFuncs.GetOwnerName(transform) + " New Wander Point Set: " + target);
+        
         isResting = false;
         anim.Play("Walk");
     }
 
     public void OnParentCollision(Collision2D collision) // needs to update collision detection
     {
-        if (collision.gameObject.CompareTag("Player"))
-           Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " Collided With Player!");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Character! Stopping and wandering away.");
+            StopAllCoroutines(); // Stop any current wandering coroutine  
+            StartCoroutine(IdleAndSetNewWanderPoint());
+        }
+          
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " Collided With Wall!");
+            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Wall!");
             StopAllCoroutines();// stop the current coroutine to avoid multiple coroutines running at the same time
             StartCoroutine(IdleAndSetNewWanderPoint());
         }
     }
     private Vector2 GetRandomWanderPoint() // the enemy will wander within the circle defined by wanderRadius started off with homeLocation
-    { 
-        float angle = UnityEngine.Random.Range(0f, 2f * Mathf.PI);
-        float radius = UnityEngine.Random.Range(0f, wanderRadius); // ensure they will never wander out of the circle
-        Vector2 randomPoint = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-        return homeLocation + randomPoint;
+    {
+        int maxAttempts = 4; // limit attempts to optimize, if no valid point, goes back to base
+        for (int i = 0; i < maxAttempts; i++)
+        {
+            float angle = UnityEngine.Random.Range(0f, 2f * Mathf.PI);
+            float radius = UnityEngine.Random.Range(0f, wanderRadius); // ensure they will never wander out of the circle
+            Vector2 randomPoint = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+            
+            Vector2 potentialPoint = homeLocation + randomPoint;
+            lastSelectedWanderPoint = potentialPoint; // for debugging purposes
+            Collider2D hit = Physics2D.OverlapCircle(homeLocation + randomPoint, 0.2f, LayerMask.GetMask("Unwalkable")); // check if this dumbass chooses a wall to walk to again
+            RaycastHit2D lineHit = Physics2D.Linecast(transform.parent.position, potentialPoint, LayerMask.GetMask("Unwalkable"));
+
+            if (hit == null && lineHit == false)
+            {
+                return potentialPoint;
+            }
+            else
+            {
+                Debug.Log(HelperFuncs.GetOwnerName(transform) +
+                    " Block Path: " + potentialPoint);
+            }
+        }
+        return homeLocation; // if no valid point found, return to home location
 
     }
   
@@ -109,5 +138,11 @@ public class General_Enemy_Wandering : MonoBehaviour
         //Debug.Log(gameObject.name + " spawnLocation: " + homeLocation);
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(homeLocation, wanderRadius); // homeLocation will look weird before running the editor.
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(lastSelectedWanderPoint, 0.1f);
     }
+
+    // misc shits
+    
 }

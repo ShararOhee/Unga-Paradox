@@ -43,12 +43,12 @@ public class General_Enemy_Detection : MonoBehaviour
         {
             case SightState.Player:
                 hasLineOfSight = true;
-                Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " I see the Player!");
+                //Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " I see the Player!");
                 DrawDetectionLine(Color.green);
                 break;
             case SightState.Obstacle:
                 hasLineOfSight = false;
-                Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + ": The player is in my range but is behind a wall!");
+                //Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + ": The player is in my range but is behind a wall!");
                 DrawDetectionLine(Color.red);
                 break;   
             default:
@@ -67,7 +67,7 @@ public class General_Enemy_Detection : MonoBehaviour
             detectionTimer = 0f;
 
             hasLineOfSight = false;
-            Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + ": The player is outside of my range!");
+            //Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + ": The player is outside of my range!");
             DrawDetectionLine(Color.gray);
             return false;
         }

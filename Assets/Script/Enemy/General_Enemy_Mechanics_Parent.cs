@@ -4,6 +4,9 @@ using UnityEngine;
 public class General_Enemy_Mechanics_Parent : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool isChasing;
+    private bool isWandering;
+
     private General_Enemy_PathFinding pathFinder;
     void Start()
     {
