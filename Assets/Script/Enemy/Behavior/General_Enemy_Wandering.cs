@@ -20,6 +20,7 @@ public class General_Enemy_Wandering : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private General_Enemy_Movement enemyMovement;
 
     private Vector2 homeLocation;
     private bool isResting;
@@ -27,13 +28,16 @@ public class General_Enemy_Wandering : MonoBehaviour
     
     // for debugging purposes
     private Vector2 lastSelectedWanderPoint;
+
     private void Awake()
     {
         homeLocation = transform.parent != null ? (Vector2)transform.parent.position : (Vector2)transform.position;
         rb = GetComponentInParent<Rigidbody2D>(); // from parent gameObject
         anim = GetComponentInParent<Animator>(); // from parent gameObject
+        enemyMovement = gameObject.AddComponent<General_Enemy_Movement>();
+        enemyMovement.Initialized(rb, transform.parent);
+        
     }
-
     private void OnEnable()
     {
         StartCoroutine(IdleAndSetNewWanderPoint());
@@ -48,33 +52,23 @@ public class General_Enemy_Wandering : MonoBehaviour
     {
         if (isResting)
         {
-            rb.linearVelocity = Vector2.zero;
+            enemyMovement.Stop();
+            //anim.Play("Idle");
             return;
         }
 
-        if (Vector2.Distance(transform.position, target) < 0.1f )
+        if (Vector2.Distance(transform.parent.position, target) < 0.1f)
         {
+            enemyMovement.Stop();
+            //anim.Play("Idle");
             StartCoroutine(IdleAndSetNewWanderPoint());
+            return;
         }
-        HandleMovements();
+
+        enemyMovement.MoveTowards(target, moveSpeed);
+        anim.Play("Walk");
     }
-
-    private void HandleMovements() // update for parent gameObject
-    {
-        Vector2 direction = (target - (Vector2)transform.parent.position).normalized;
-
-        if (direction.x > 0 && transform.parent.localScale.x > 0)
-        {
-            transform.parent.localScale = new Vector3(-Mathf.Abs(transform.parent.localScale.x * -1), transform.parent.localScale.y, transform.parent.localScale.z);
-        }
-        else if (direction.x < 0  && transform.parent.localScale.x < 0)
-        {
-            transform.parent.localScale = new Vector3(Mathf.Abs(transform.parent.localScale.x), transform.parent.localScale.y, transform.parent.localScale.z);
-        }
-
-        rb.linearVelocity = direction * moveSpeed;
-    }
-    IEnumerator IdleAndSetNewWanderPoint()
+    public IEnumerator IdleAndSetNewWanderPoint()
     {
         isResting = true;
         anim.Play("Idle");
@@ -89,22 +83,6 @@ public class General_Enemy_Wandering : MonoBehaviour
         anim.Play("Walk");
     }
 
-    public void OnParentCollision(Collision2D collision) // needs to update collision detection
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Character! Stopping and wandering away.");
-            StopAllCoroutines(); // Stop any current wandering coroutine  
-            StartCoroutine(IdleAndSetNewWanderPoint());
-        }
-          
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle"))
-        {
-            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Wall!");
-            StopAllCoroutines();// stop the current coroutine to avoid multiple coroutines running at the same time
-            StartCoroutine(IdleAndSetNewWanderPoint());
-        }
-    }
     private Vector2 GetRandomWanderPoint() // the enemy will wander within the circle defined by wanderRadius started off with homeLocation
     {
         int maxAttempts = 4; // limit attempts to optimize, if no valid point, goes back to base

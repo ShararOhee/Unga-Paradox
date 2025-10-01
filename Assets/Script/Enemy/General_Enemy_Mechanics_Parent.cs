@@ -17,6 +17,7 @@ public class General_Enemy_Mechanics_Parent : MonoBehaviour
     void Update()
     {
         var childDetection = GetComponentInChildren<General_Enemy_Detection>();
+        
         //var childWandering = GetComponentInChildren<General_Enemy_Wandering>();
 
         if (childDetection != null && childDetection.hasLineOfSight)
@@ -24,10 +25,14 @@ public class General_Enemy_Mechanics_Parent : MonoBehaviour
             // proceed to chase the mf
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision) // handle collision
     {
-        var childWander = GetComponentInChildren<General_Enemy_Wandering>();
-        if (childWander != null)
-            childWander.OnParentCollision(collision);
+        var childCollision = GetComponentInChildren<General_Enemy_Collision>();
+
+        if (childCollision != null)
+        {
+            childCollision.OnParentCollision(collision);
+        }
+            
     }
 }

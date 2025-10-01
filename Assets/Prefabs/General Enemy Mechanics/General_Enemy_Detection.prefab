@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4524316175038560821}
-  - component: {fileID: 6112924333742489278}
+  - component: {fileID: 102268526913333125}
   m_Layer: 8
   m_Name: General_Enemy_Detection
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6112924333742489278
+--- !u!114 &102268526913333125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,5 +47,5 @@ MonoBehaviour:
   Detection_Range: 3
   Layers_To_Detect:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 0
   hasLineOfSight: 0
