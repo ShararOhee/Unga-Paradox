@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a451b9b07c1840e4ab8638adee6cedda
+guid: f754755d43e609145bdc9935f5989b93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6395852546622712562
-    second: neoncity2_0
+      213: -1914299883289551793
+    second: BillboardAndBridge_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neoncity2_0
+      name: BillboardAndBridge_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
+        width: 128
         height: 72
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fa69352102a2c850800000000000000
-      internalID: 6395852546622712562
+      spriteID: f4c54f6066a0f65e0800000000000000
+      internalID: -1914299883289551793
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e036ecc27cff55d468dd8fc702e74a7c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -133,11 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":72.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      neoncity2_0: 6395852546622712562
+      BillboardAndBridge_0: -1914299883289551793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
