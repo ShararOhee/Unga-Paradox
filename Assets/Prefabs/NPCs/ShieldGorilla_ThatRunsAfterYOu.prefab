@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1066096884025612092}
   - component: {fileID: 8537456874889916238}
   m_Layer: 8
-  m_Name: ShieldGorilla_ThatRunsAfterYOu
+  m_Name: ShieldGorilla_ThatRunsAfterYOU
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

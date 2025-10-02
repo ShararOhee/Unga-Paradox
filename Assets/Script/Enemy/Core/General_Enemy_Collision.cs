@@ -25,11 +25,6 @@ public class General_Enemy_Collision : MonoBehaviour
             Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Player! Stopping and wandering away.");
            
         }
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle"))
-        {
-            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Wall!");
-            StopAllCoroutines();// stop the current coroutine to avoid multiple coroutines running at the same time
-            StartCoroutine(enemyWandering.IdleAndSetNewWanderPoint());
-        }
+       
     }
 }

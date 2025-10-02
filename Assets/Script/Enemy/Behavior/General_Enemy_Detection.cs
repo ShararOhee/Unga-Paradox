@@ -45,7 +45,7 @@ public class General_Enemy_Detection : MonoBehaviour
             case SightState.Player:
                 hasLineOfSight = true;
                 //Debug.Log((transform.parent != null ? transform.parent.gameObject.name : gameObject.name) + " I see the Player!");
-                DrawDetectionLine(Color.green);
+                DrawDetectionLine(Color.blueViolet);
                 break;
             case SightState.Obstacle:
                 hasLineOfSight = false;
@@ -98,7 +98,7 @@ public class General_Enemy_Detection : MonoBehaviour
         color
     );
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.darkMagenta;
         Gizmos.DrawWireSphere(transform.position, Detection_Range);
