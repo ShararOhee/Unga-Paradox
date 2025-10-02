@@ -1989,6 +1989,9 @@ GameObject:
   - component: {fileID: 1850833397}
   - component: {fileID: 1850833399}
   - component: {fileID: 1850833398}
+  - component: {fileID: 1850833400}
+  - component: {fileID: 1850833402}
+  - component: {fileID: 1850833401}
   m_Layer: 0
   m_Name: Ground Tilemap
   m_TagString: Untagged
@@ -6752,7 +6755,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1891453740}
   - {fileID: 519420032}
-  - {fileID: 339866346}
   - {fileID: 1260907014}
   - {fileID: 619394802}
   - {fileID: 1978253882}
