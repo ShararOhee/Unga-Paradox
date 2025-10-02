@@ -6,12 +6,10 @@ public class Sword : MonoBehaviour
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
-
     private PlayerControls playerControls;
     private Animator myAnimator;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
-
     private GameObject slashAnim;
 
     private void Awake()
@@ -21,46 +19,29 @@ public class Sword : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         playerControls = new PlayerControls();
     }
-
     private void OnEnable()
     {
         playerControls.Enable();
     }
-
     void Start()
     {
         playerControls.Player.Attack.started += _ => Attack();
     }
 
-    private void Update()
-    {
-        MouseFollowWithOffset();
-    }
+    private void Update() { MouseFollowWithOffset(); }
 
-    private void Attack()
-    {
-        myAnimator.SetTrigger("Attack");
-
-    }
+    private void Attack() { myAnimator.SetTrigger("Attack"); }
 
     private void MouseFollowWithOffset()
     {
         Vector2 mousePos = playerControls.Player.MousePosition.ReadValue<Vector2>();
         Vector2 playerScreenPoint = Camera.main.WorldToScreenPoint(playerController.transform.position);
-
         Vector2 direction = mousePos - playerScreenPoint;
-
-
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         if (mousePos.x < playerScreenPoint.x)
         {
-           
             activeWeapon.transform.rotation = Quaternion.Euler(180, 0, -angle);
         }
-        else
-        {
-            activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        else { activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle); }
     }
 }
