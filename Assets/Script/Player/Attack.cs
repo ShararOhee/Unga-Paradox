@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Attack : MonoBehaviour
 {
     private PlayerControls controls;
-    private float lastattackTime = -Mathf.Infinity;
+    private float timer = 0.0f;
+    private bool playOnce = false;
 
     [Header("Attack Settings")]
     [Tooltip("Attack effect")]
@@ -28,10 +31,6 @@ public class Attack : MonoBehaviour
     {
         controls = new PlayerControls();
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
     }
 
     private void OnEnable()
@@ -46,14 +45,33 @@ public class Attack : MonoBehaviour
         controls.Player.Disable();
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        // Attack Cooldown
+        if (timer > attackCooldown)
+        {
+            if (!playOnce)
+            {
+                Debug.Log("Attack Enable " + timer);
+                controls.Player.Attack.Enable();
+                playOnce = true;
+            }
+        }
+        if (timer < attackCooldown)
+        {
+            if (playOnce)
+            {
+                Debug.Log("Attack Disable " + timer);
+                controls.Player.Attack.Disable();
+                playOnce = false;
+            }
+        }
+        timer += Time.deltaTime;
+    }
+
     private void onAttack(InputAction.CallbackContext context)
     {
-        // Check if attack is on cooldown
-        if (Time.time - lastattackTime < attackCooldown)
-        {
-            return;
-        }
+        timer = 0.0f;
 
         // Get mouse position in world
         Vector2 mouseScreenPos = controls.Player.MousePosition.ReadValue<Vector2>();
