@@ -23,17 +23,13 @@ public class General_Enemy_Movement : MonoBehaviour
             {
                 parentTransform.localScale = new Vector3(-Mathf.Abs(parentTransform.localScale.x), parentTransform.localScale.y, parentTransform.localScale.z);
             }
-            else if (direction.x < 0 && transform.parent.localScale.x < 0)
+            else if (direction.x < 0 && parentTransform.localScale.x < 0)
             {
                 parentTransform.localScale = new Vector3(Mathf.Abs(parentTransform.localScale.x), parentTransform.localScale.y, parentTransform.localScale.z);
             }
         }
 
-        // Only move if not at the target
-        if (direction.magnitude > 0.01f)
             rb.linearVelocity = direction * moveSpeed;
-        else
-            rb.linearVelocity = Vector2.zero;
     }
 
     public void Stop()

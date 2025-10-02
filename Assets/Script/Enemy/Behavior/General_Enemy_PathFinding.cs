@@ -1,22 +1,20 @@
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class General_Enemy_PathFinding
+public class General_Enemy_PathFinding : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    private Transform target;
-
-    public General_Enemy_PathFinding(NavMeshAgent agent, Transform target)
+    private AIPath aiPath;
+    private General_Enemy_Wandering enemyWandering;
+    private void Awake()
     {
-        this.agent = agent;
-        this.target = target;
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        aiPath = GetComponent<AIPath>();
+        enemyWandering = GetComponentInChildren<General_Enemy_Wandering>();
     }
 
-    public void ChaseTarget()
+    private void Update()
     {
-        if (agent != null && target != null)
-            agent.SetDestination(target.position);
+        aiPath.destination = enemyWandering.target;
+        Debug.Log(HelperFuncs.GetOwnerName(transform) + " Pathfinding to: " + aiPath.destination);
     }
 }
