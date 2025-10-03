@@ -6,6 +6,10 @@ public class InvincibilityController : MonoBehaviour
     private Health healthController;
     private void Awake()
     {
+        if (healthController == null)
+        {
+            Debug.Log("Player does not have a health component.");
+        }
         healthController = GetComponent<Health>();
     }
 

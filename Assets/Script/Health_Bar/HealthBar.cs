@@ -21,19 +21,23 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
+        if (_health == null)
+        {
+            Debug.LogError("Health Bar from player needs to be assigned. Check PlayerUI canvas in Inspector.");
+        }
         _maxRightMask = _barRect.rect.width - _mask.padding.x - _mask.padding.z;
-        _hpIndicator.SetText($"{_health.currentHealth}/{_health.maximumHealth}");
+        _hpIndicator.SetText($"{_health.currentHealth}/{_health.maxHealth}");
         _initialRightMask = _mask.padding.z;
     }
 
     public void SetValue(int newValue)
     {
-        var targetWidth = newValue * _maxRightMask / _health.MaxHp;
+        var targetWidth = newValue * _maxRightMask / _health.maxHealth;
         var newRightMask = _maxRightMask - targetWidth + _initialRightMask ;
         var padding = _mask.padding;
         padding.z = newRightMask;
         _mask.padding = padding;
-        _hpIndicator.SetText($"{newValue}/{_health.maximumHealth}");
+        _hpIndicator.SetText($"{newValue}/{_health.maxHealth}");
 
     }
 }
