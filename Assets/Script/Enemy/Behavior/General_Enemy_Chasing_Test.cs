@@ -7,7 +7,7 @@ public class General_Enemy_Chasing_Test : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Chasing Settings")]
     [Tooltip("Movement speed of the NPC.")]
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -47,6 +47,13 @@ public class General_Enemy_Chasing_Test : MonoBehaviour
         Vector2 nextWayPoint = currentPath.vectorPath[currentWaypointIndex];
         enemyMovement.MoveTowards(nextWayPoint, moveSpeed);
         anim.Play("Run");
+
+        if (currentWaypointIndex >= currentPath.vectorPath.Count)
+        {
+            enemyMovement.Stop();
+            anim.Play("Idle");
+            return;
+        }
 
         if (Vector2.Distance(transform.parent.position, nextWayPoint) < wayPointThreshold)
         {

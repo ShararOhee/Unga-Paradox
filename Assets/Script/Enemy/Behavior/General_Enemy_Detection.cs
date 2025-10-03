@@ -5,7 +5,7 @@ public class General_Enemy_Detection : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private GameObject Player;
     [Header("Detection Settings")]
-    [SerializeField] private float Detection_Range = 3f;
+    [SerializeField] private float Detection_Range = 5f;
     [SerializeField] private LayerMask Layers_To_Detect;
 
     public bool hasLineOfSight = false;

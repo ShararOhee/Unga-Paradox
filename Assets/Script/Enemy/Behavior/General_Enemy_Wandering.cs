@@ -97,11 +97,11 @@ public class General_Enemy_Wandering : MonoBehaviour
         {
             currentPath = p;
             currentWaypointIndex = 0;
-            Debug.Log("Path to target:");
-            foreach (var point in p.vectorPath)
-            {
-                Debug.Log($"Waypoint: {point.x}, {point.y}, {point.z}");
-            }
+            //Debug.Log("Path to target:");
+            //foreach (var point in p.vectorPath)
+            //{
+            //    Debug.Log($"Waypoint: {point.x}, {point.y}, {point.z}");
+            //}
         }
     }
     private Vector2 GetRandomWanderPoint() // the enemy will wander within the circle defined by wanderRadius started off with homeLocation
