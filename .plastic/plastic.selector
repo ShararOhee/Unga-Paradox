@@ -1,4 +1,0 @@
-repository "Unga Paradox 2025-09-10_13-30-56/Caveman@20066326651236@cloud"
-  path "/"
-    br "/main"
-    co "/main"
