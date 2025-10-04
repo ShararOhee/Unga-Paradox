@@ -678,11 +678,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 40e53d41-d964-4430-a81a-dbd5c3ec6a6e
+  cloudProjectId: cd0a6348-5272-472b-a7c5-efdaa3a78110
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Unga Paradox 2025-09-10_13-30-56
-  organizationId: khangchung15
+  projectName: Unga-Paradox
+  organizationId: googoogaagaa123
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

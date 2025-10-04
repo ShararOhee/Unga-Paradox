@@ -85,7 +85,7 @@ public class General_Enemy_Wandering : MonoBehaviour
         yield return new WaitForSeconds(restTime);
 
         target = GetRandomWanderPoint();
-        Debug.Log(HelperFuncs.GetOwnerName(transform) + " New Wander Point Set: " + target);
+        //Debug.Log(HelperFuncs.GetOwnerName(transform) + " New Wander Point Set: " + target);
         seeker.StartPath(rb.position, target, OnPathComplete);
         isResting = false;
         anim.Play("Walk");

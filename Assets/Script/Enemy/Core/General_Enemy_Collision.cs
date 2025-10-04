@@ -16,15 +16,11 @@ public class General_Enemy_Collision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Character! Stopping and wandering away.");
+            //Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Character! Stopping and wandering away.");
             StopAllCoroutines(); // Stop any current wandering coroutine  
             StartCoroutine(enemyWandering.IdleAndSetNewWanderPoint());
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log(HelperFuncs.GetOwnerName(transform) + " Collided With Player! Stopping and wandering away.");
-           
-        }
+       
        
     }
 }
