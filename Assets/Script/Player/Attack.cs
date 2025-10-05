@@ -10,16 +10,12 @@ public class Attack : MonoBehaviour
     private bool playOnce = false;      // bool for attack cooldown
 
     [Header("Attack Settings")]
-    [Tooltip("Attack effect")]
+    [Tooltip("Attack effect (Also holds damage)")]
     public GameObject attackEffect;
     [Tooltip("Attack sound")]
     public AudioClip attackSound;
-    //[Tooltip("Attack Collider")]
-    //public GameObject attackCollider;
     [Tooltip("Attack distance")]
     public float attackDistance = 1.0f;
-    [Tooltip("Attack damage")]
-    public float attackDamage = 1.0f;
     [Tooltip("Attack cooldown")]
     public float attackCooldown = 1.0f;
 
@@ -31,12 +27,14 @@ public class Attack : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    // Enable attack
     private void OnEnable()
     {
         controls.Player.Enable();
         controls.Player.Attack.performed += onAttack;
     }
 
+    // Disable attack
     private void OnDisable()
     {
         controls.Player.Attack.performed -= onAttack;
