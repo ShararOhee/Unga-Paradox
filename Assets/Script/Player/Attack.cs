@@ -5,25 +5,19 @@ using UnityEngine.InputSystem;
 
 public class Attack : MonoBehaviour
 {
-    private PlayerControls controls;
-    private float timer = 0.0f;
-    private bool playOnce = false;
+    private PlayerControls controls;    // input actions
+    private float timer = 0.0f;         // timer for attack cooldown
+    private bool playOnce = false;      // bool for attack cooldown
 
     [Header("Attack Settings")]
-    [Tooltip("Attack effect")]
+    [Tooltip("Attack effect (Also holds damage)")]
     public GameObject attackEffect;
     [Tooltip("Attack sound")]
     public AudioClip attackSound;
     [Tooltip("Attack distance")]
     public float attackDistance = 1.0f;
-    [Tooltip("Attack speed")]
-    public float attackSpeed = 1.0f;
-    [Tooltip("Attack damage")]
-    public float attackDamage = 1.0f;
     [Tooltip("Attack cooldown")]
     public float attackCooldown = 1.0f;
-    [Tooltip("Attack lifetime")]
-    public float attackLifetime = 0.3f;
 
     private AudioSource audioSource;
 
@@ -33,12 +27,14 @@ public class Attack : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    // Enable attack
     private void OnEnable()
     {
         controls.Player.Enable();
         controls.Player.Attack.performed += onAttack;
     }
 
+    // Disable attack
     private void OnDisable()
     {
         controls.Player.Attack.performed -= onAttack;
@@ -71,6 +67,7 @@ public class Attack : MonoBehaviour
 
     private void onAttack(InputAction.CallbackContext context)
     {
+        // Reset timer for cooldown
         timer = 0.0f;
 
         // Get mouse position in world
@@ -90,28 +87,6 @@ public class Attack : MonoBehaviour
         // Instantiate attack effect
         GameObject attack = Instantiate(attackEffect, spawnPos, Quaternion.Euler(0, 0, angle));
         attack.transform.SetParent(transform);
-
-        //// Attack effect initialization
-        //AttackEffect effect = attack.GetComponent<AttackEffect>();
-        //if (effect != null)
-        //{
-        //    effect.Initialize(direction, attackSpeed, attackDamage, attackLifetime);
-        //}
-
-        // Auto-destroy after a short time if needed
-
-        // Trigger animation
-        Animator anim = attack.GetComponent<Animator>();
-        if (anim != null)
-        {
-            anim.SetTrigger("isAttack");
-        }
-        else
-        {
-            Debug.LogWarning("No Animator found on attack clone!");
-        }
-
-        Destroy(attack, attackLifetime);
 
         // Play attack sound
         if (audioSource != null)
