@@ -3338,7 +3338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Controller
   spriteRenderer: {fileID: 1321256645}
   playerHealth: {fileID: 0}
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 519420031}
   movementSpeed: 4
   moveAction:
     m_Name: Move
@@ -7971,7 +7971,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 2.1621995
+      m_AnimationSpeed: 2.5884895
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -2, z: 0}
@@ -7980,7 +7980,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 1.5101357
+      m_AnimationSpeed: 2.885962
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: -1, z: 0}
@@ -7989,7 +7989,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 1.185495
+      m_AnimationSpeed: 2.1875393
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 3, z: 0}
@@ -7998,7 +7998,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 0.52180904
+      m_AnimationSpeed: 1.8783016
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
