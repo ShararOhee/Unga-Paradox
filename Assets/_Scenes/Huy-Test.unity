@@ -221,7 +221,6 @@ GameObject:
   - component: {fileID: 339866346}
   - component: {fileID: 339866348}
   - component: {fileID: 339866349}
-  - component: {fileID: 339866353}
   - component: {fileID: 339866355}
   - component: {fileID: 339866354}
   - component: {fileID: 339866356}
@@ -259,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6ee009d37a08c40a17ef12ce8935ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 339866355}
   playerHealth: {fileID: 0}
   playerCamera: {fileID: 519420031}
   movementSpeed: 4
@@ -267,12 +266,12 @@ MonoBehaviour:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d8cd2cfe-8247-4172-9fec-01699def4609
+    m_Id: 0ba0ae24-887f-414c-b6d1-fd00550c2046
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: b5439489-da8f-4a48-a4c6-4a036afc4393
+      m_Id: a6e947aa-0e88-4881-9dea-b6861ab66e10
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -280,7 +279,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 4
     - m_Name: up
-      m_Id: 0d733f3f-b9e4-482f-88d4-43e5a0a74ac7
+      m_Id: cc29cf53-184e-4085-ab6e-d90ec4a6bd16
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
@@ -288,7 +287,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: down
-      m_Id: 7ce0243c-48a8-431c-928f-ab3dad5b7302
+      m_Id: 202c79b9-cc9f-4217-a172-56be0913e6d4
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
@@ -296,7 +295,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: left
-      m_Id: 999744d0-91a8-4c8a-9ce2-d6956168dc57
+      m_Id: 74ba64ad-1eb5-4b1b-a127-d56969db1787
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -304,7 +303,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: right
-      m_Id: acc70109-2604-4974-b984-37d965300812
+      m_Id: a252efc4-1f68-4f14-a6fa-2156479da0e7
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -326,34 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
   playerController: {fileID: 339866348}
-  animator: {fileID: 0}
---- !u!50 &339866353
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339866344}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  animator: {fileID: 339866354}
 --- !u!95 &339866354
 Animator:
   serializedVersion: 7
@@ -423,7 +395,7 @@ SpriteRenderer:
   m_SortingLayerID: 299022299
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4228483744936433478, guid: 6dcb58ea6cfff14478d95f5e0e35ce29, type: 3}
+  m_Sprite: {fileID: 2966220604263102434, guid: 3c5c9cf779578894aae23a353f290357, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -468,8 +440,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.005785227, y: 0.016890049}
-  m_Size: {x: 0.45757627, y: 0.9662199}
+  m_Offset: {x: 0.005785227, y: -0.07915571}
+  m_Size: {x: 0.45757627, y: 0.7741284}
   m_Direction: 0
 --- !u!4 &466729481 stripped
 Transform:
@@ -7852,7 +7824,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 1.5373358
+      m_AnimationSpeed: 2.8718698
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -2, z: 0}
@@ -7861,7 +7833,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 2.9976177
+      m_AnimationSpeed: 1.1775821
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: -1, z: 0}
@@ -7870,7 +7842,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 1.9151827
+      m_AnimationSpeed: 1.0928761
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 3, z: 0}
@@ -7879,7 +7851,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 2.320174
+      m_AnimationSpeed: 1.3835778
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
