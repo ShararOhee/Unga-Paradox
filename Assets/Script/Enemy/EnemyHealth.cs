@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             audioSource.PlayOneShot(deathSound);
-            Destroy(gameObject, 1.0f);
+            Destroy(gameObject, deathSound.length);
         }
     }
 }
