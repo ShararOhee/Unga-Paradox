@@ -19,7 +19,7 @@ TagManager:
   - Enemy
   - NPCs
   - Items
-  - 
+  - No Light
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 299022299
+    locked: 0
+  - name: No Light
+    uniqueID: 406297769
     locked: 0
   m_RenderingLayers:
   - Default

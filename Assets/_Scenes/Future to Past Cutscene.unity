@@ -318,7 +318,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2078862447
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1204,7 +1204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2078862447
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2531258404794173883, guid: bd19d845aad89bb409f9391ecdf3f23c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1964,9 +1964,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1670776633
-  m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingLayerID: 406297769
+  m_SortingLayer: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1903817764255214131, guid: cc0d0aa60a353d148b2042128116cea8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2551,7 +2551,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2078862447
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: -6038296087783852788, guid: fb90a404c1a36894cbe2de54f2b55487, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2634,10 +2634,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.721
   m_Color: {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
-  m_Intensity: 27.2
+  m_Intensity: 50
   m_LightVolumeIntensity: 0
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0000000091131784034c6c67
+  m_ApplyToSortingLayers: 0000000091131784034c6c67239930f5dbb7d211
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2655,10 +2655,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 21.950092
-  m_PointLightOuterAngle: 61.72944
-  m_PointLightInnerRadius: 1.94
-  m_PointLightOuterRadius: 6.15
+  m_PointLightInnerAngle: 28.873167
+  m_PointLightOuterAngle: 87.11405
+  m_PointLightInnerRadius: 1.21
+  m_PointLightOuterRadius: 5.82
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
