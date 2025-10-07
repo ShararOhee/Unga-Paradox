@@ -48,7 +48,7 @@ public class Attack : MonoBehaviour
         {
             if (!playOnce)
             {
-                Debug.Log("Attack Enable " + timer);
+                //Debug.Log("Attack Enable " + timer);
                 controls.Player.Attack.Enable();
                 playOnce = true;
             }
@@ -57,7 +57,7 @@ public class Attack : MonoBehaviour
         {
             if (playOnce)
             {
-                Debug.Log("Attack Disable " + timer);
+                //Debug.Log("Attack Disable " + timer);
                 controls.Player.Attack.Disable();
                 playOnce = false;
             }

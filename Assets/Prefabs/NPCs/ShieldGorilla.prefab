@@ -60,6 +60,8 @@ GameObject:
   - component: {fileID: 8798537968116668249}
   - component: {fileID: 911085751853856674}
   - component: {fileID: 3331393693246969672}
+  - component: {fileID: 8050355482461810790}
+  - component: {fileID: 4550693193071543147}
   - component: {fileID: 8954316339554204880}
   m_Layer: 8
   m_Name: ShieldGorilla
@@ -289,6 +291,33 @@ MonoBehaviour:
   hurtSound3: {fileID: 8300000, guid: f6b56fbe26ed8b44ab20c08b1032f206, type: 3}
   hurtSounds: []
   currentHealth: 0
+--- !u!114 &8050355482461810790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378590449411482196}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87f3b29815337541bb4fe8b5977d772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Knockback
+  knockBackTime: 0.2
+--- !u!114 &4550693193071543147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378590449411482196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa581f311ffc74640935905d70409d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Flash
+  whiteFlash: {fileID: 2100000, guid: 6b43fb4c30de72e44a2e889dec6a1eaf, type: 2}
+  flashDuration: 0.2
 --- !u!82 &8954316339554204880
 AudioSource:
   m_ObjectHideFlags: 0
