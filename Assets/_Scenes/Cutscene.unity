@@ -2531,7 +2531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c2ee2b3fc3fe64681b1912922dea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownSceneTransition
-  countdownDuration: 37
+  countdownDuration: 35
   targetSceneName: Neon City
   countdownText: {fileID: 0}
   countdownSlider: {fileID: 0}
