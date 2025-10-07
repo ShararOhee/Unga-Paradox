@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownSceneTransition
   countdownDuration: 16
-  targetSceneName: Main Hub
+  targetSceneName: Arrival Past Cutscene
   countdownText: {fileID: 0}
   countdownSlider: {fileID: 0}
 --- !u!1 &591603763
