@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 550
+  rotationSpeed: -550
   clockwise: 1
 --- !u!95 &166857141
 Animator:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 700
+  rotationSpeed: -700
   clockwise: 1
 --- !u!95 &733624822
 Animator:
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 210
+  rotationSpeed: -210
   clockwise: 1
 --- !u!95 &734835643
 Animator:
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 150
+  rotationSpeed: -150
   clockwise: 1
 --- !u!95 &854229229
 Animator:
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 420
+  rotationSpeed: -420
   clockwise: 1
 --- !u!95 &1240652752
 Animator:
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 160
+  rotationSpeed: -160
   clockwise: 1
 --- !u!95 &1371766229
 Animator:
@@ -2244,7 +2244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9ebb5f8ed1a844af8169fcc0279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRotater
-  rotationSpeed: 100
+  rotationSpeed: -100
   clockwise: 1
 --- !u!95 &1498955306
 Animator:
@@ -8205,7 +8205,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 2.750634
+      m_AnimationSpeed: 1.1644679
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -2, z: 0}
@@ -8214,7 +8214,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 1.9692578
+      m_AnimationSpeed: 2.2213268
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: -1, z: 0}
@@ -8223,7 +8223,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 2.0534148
+      m_AnimationSpeed: 1.9156529
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 3, z: 0}
@@ -8232,7 +8232,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1347532211411968617, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
       - {fileID: -7645372005702169758, guid: 9e3a50d917cb5d5438df217aea88e758, type: 3}
-      m_AnimationSpeed: 0.94516
+      m_AnimationSpeed: 1.5458658
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
