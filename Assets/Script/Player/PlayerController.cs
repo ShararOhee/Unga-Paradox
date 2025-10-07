@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [Header("Game Object and Component References")]
     [Tooltip("The sprite renderer that represents the player.")]
     public SpriteRenderer spriteRenderer = null;
+    [Tooltip("The health component attached to the player.")]
+    public Health playerHealth;
     [Tooltip("The camera that will follow the player.")]
     public Camera playerCamera;
 
@@ -158,7 +160,11 @@ public class PlayerController : MonoBehaviour
 
     private void DetermineState()
     {
-        if (currentVelocity.magnitude > 0.1f)
+        if (playerHealth != null && playerHealth.currentHealth <= 0)
+        {
+            state = PlayerState.Dead;
+        }
+        else if (currentVelocity.magnitude > 0.1f)
         {
             state = PlayerState.Walk;
         }
