@@ -6,7 +6,8 @@ public class HealthAudio : MonoBehaviour
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip[] hurtClips;
     [SerializeField] private AudioClip deathClip;
-
+    [SerializeField] private AudioClip healClip;
+    
     [Header("Tuning")]
     [Range(0f, 1f)] public float volume = 1f;
     [Tooltip("Random +/- pitch to avoid repetitiveness.")]
@@ -35,11 +36,26 @@ public class HealthAudio : MonoBehaviour
         _lastPlayTime = Time.time;
     }
 
+    public void PlayHeal()
+    {
+        if (healClip == null) return;
+        
+        if (healClip == null)
+        {
+            PlayHeal();
+            return;
+        }
+        
+        if (Time.time - _lastPlayTime < minGapSeconds) return;
+        
+        source.pitch = 1f;
+        source.PlayOneShot(healClip, volume);
+    }
+
     public void PlayDeath()
     {
         if (deathClip == null)
         {
-            // Fallback to a hurt clip if no death clip
             PlayHurt();
             return;
         }

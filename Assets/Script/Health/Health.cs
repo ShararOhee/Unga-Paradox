@@ -23,6 +23,8 @@ public class Health : MonoBehaviour
     [Tooltip("Drag player to the box below and assign PlayerController.enabled.")]
     public UnityEvent OnDeath;
     
+    public UnityEvent OnHealed;
+
     public void TakeDamage(float damage)
     {
         if (currentHealth <= 0)
@@ -68,11 +70,17 @@ public class Health : MonoBehaviour
         }
         
         currentHealth += amount;
-
+        Debug.Log(currentHealth);
+        Debug.Log(amount);
+        healthBar.SetValue((int)currentHealth);
+        OnHealed?.Invoke();
+        
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
+        
+
     }
     
 }
